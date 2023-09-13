@@ -11,7 +11,7 @@ pygame.display.set_icon(icon)
 charImg = pygame.image.load('space rocket.png')
 charX = 0
 charY = 0
-hi
+
 running = True
 while running:
     for event in pygame.event.get():
