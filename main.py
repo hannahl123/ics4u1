@@ -4,8 +4,8 @@ pygame.init()
 screen = pygame.display.set_mode((1080, 720))
 
 pygame.display.set_caption("Undead Uprising")
-icon = pygame.image.load('')
-pygame.display.set_icon(icon)
+# icon = pygame.image.load('')
+# pygame.display.set_icon(icon)
 
 # Character
 charImg = pygame.image.load('')
