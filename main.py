@@ -3,12 +3,12 @@ import pygame
 pygame.init()
 screen = pygame.display.set_mode((1080, 720))
 
-pygame.display.set_caption("Game")
-icon = pygame.image.load('logo.png')
+pygame.display.set_caption("Undead Uprising")
+icon = pygame.image.load('')
 pygame.display.set_icon(icon)
 
 # Character
-charImg = pygame.image.load('space rocket.png')
+charImg = pygame.image.load('')
 charX = 0
 charY = 0
 
@@ -20,4 +20,3 @@ while running:
 
     screen.fill((0, 0, 0))
     pygame.display.update()
-
