@@ -25,21 +25,21 @@ def player(x, y):
 
 # Enemies
 nzombieImg = pygame.image.load('zombie.png')
-fzombieImg = pygame.image.load('')
-bossImg = pygame.image.load('')
+# fzombieImg = pygame.image.load('')
+# bossImg = pygame.image.load('')
 
 
 def normZombie(randX, randY):
     screen.blit(nzombieImg, (randX, randY))
 
-
+"""
 def fastZombie(randX, randY):
     screen.blit(fzombieImg, (randX, randY))
 
 
 def boss(randX, randY):
     screen.blit(bossImg, (randX, randY))
-
+"""
 
 running = True
 while running:
