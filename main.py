@@ -1,8 +1,9 @@
 import pygame
 
 pygame.init()
-screen = pygame.display.set_mode((1080, 620))
+screen = pygame.display.set_mode((1080, 620), pygame.RESIZABLE)
 
+# Game Title and Icon
 pygame.display.set_caption("Undead Uprising")
 icon = pygame.image.load('test_char.png')
 pygame.display.set_icon(icon)
@@ -12,8 +13,8 @@ bg = pygame.image.load('bg.jpg')
 
 # Character
 charImg = pygame.image.load('char_blue.png')
-charX = 500
-charY = 300
+charX = 510
+charY = 280
 charX_change = 0
 charY_change = 0
 
@@ -24,10 +25,13 @@ def player(x, y):
 running = True
 while running:
     screen.fill((69, 140, 41))
+    w, h = pygame.display.get_surface().get_size()
     # Bg Image
     screen.blit(bg, (0, 0))
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
+            running = False
+        if event.type == pygame.KEYDOWN and event.key == pygame.K_q:
             running = False
         # if keystroke is pressed check whether its right or left
         if event.type == pygame.KEYDOWN:
@@ -46,8 +50,8 @@ while running:
             # Re-centres the character to the middle of the screen
             if event.key == pygame.K_c:
                 print("Character is re-centred")
-                charX = 500
-                charY = 300
+                charX = w/2 - 30
+                charY = h/2 - 30
         if event.type == pygame.KEYUP:
             if event.key == pygame.K_LEFT or event.key == pygame.K_a or event.key == pygame.K_RIGHT or event.key == pygame.K_d:
                 print("Keystroke has been released")
