@@ -11,9 +11,9 @@ screen_w, screen_h = pygame.display.get_surface().get_size()
 
 # Game Details
 pygame.display.set_caption("Undead Uprising")
-icon = pygame.image.load('test_char.png')
+icon = pygame.image.load('images/test_char.png')
 pygame.display.set_icon(icon)
-big_logo = pygame.image.load('UNDEAD UPRISING.png')
+big_logo = pygame.image.load('images/UNDEAD UPRISING.png')
 
 game_state = "start_menu"
 running = True
@@ -26,5 +26,6 @@ while running:
         startpage.display_start_menu()
     if game_state == 'game_play':
         print()
-    if game_state == '':
-        game_state = "hi"
+    if game_state == 'tutorial':
+        print()
+        # tutorial
