@@ -12,7 +12,7 @@ def display_start_menu():
     instructions = font.render('Pick your character', True, (255, 255, 255))
     screen.blit(instructions,
                 (screen_w / 2 - instructions.get_width() / 2, screen_h / 2 - instructions.get_height() / 2 - 100))
-    # mouse = pygame.mouse.get_pos()
+    mouse = pygame.mouse.get_pos()
     border()
     show_all_char()
     start_button()
@@ -22,11 +22,11 @@ def display_start_menu():
 def start_button():
     start_text = pygame.image.load('images/START.png')
     font = pygame.font.SysFont('Retro', 25, bold=True)
-    pygame.draw.rect(screen, (255, 0, 255), [screen_w / 2 - 150 / 2 - 5, 515 - 5, 160, 50])
+    # pygame.draw.rect(screen, (255, 0, 255), [screen_w / 2 - 150 / 2 - 5, 515 - 5, 160, 50])
     # pygame.draw.rect(screen, (0, 255, 255), [screen_w / 2 - 150 / 2, 515, 150, 40])
     # start_text = font.render('START', True, (0, 0, 0))
     # screen.blit(start_text, (screen_w / 2 - 150 / 2 + start_text.get_width() / 2, 515 + start_text.get_height() / 2, 150, 40))
-    screen.blit(start_text, (screen_w / 2 - 100 / 2, screen_h - 100))
+    screen.blit(start_text, (screen_w / 2 - 100 / 2 - 20, screen_h - 120))
 
 
 def border():

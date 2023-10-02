@@ -2,6 +2,7 @@ import pygame
 import sys
 
 import startpage
+import game
 
 pygame.init()
 
@@ -25,7 +26,7 @@ while running:
     if game_state == "start_menu":
         startpage.display_start_menu()
     if game_state == 'game_play':
-        print()
+        game.play()
     if game_state == 'tutorial':
         print()
         # tutorial
