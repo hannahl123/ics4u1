@@ -1,6 +1,5 @@
 import pygame
 import sys
-
 import startpage
 import game
 
@@ -19,9 +18,13 @@ big_logo = pygame.image.load('images/UNDEAD UPRISING.png')
 game_state = "start_menu"
 running = True
 while running:
+    mouse = pygame.mouse.get_pos()
     for event in pygame.event.get():
         if event.type == pygame.QUIT or (event.type == pygame.KEYDOWN and event.key == pygame.K_q):
             running = False
+        if game_state == 'start_menu' and event.type == pygame.MOUSEBUTTONDOWN:
+            if 470 <= mouse[0] <= 620 and screen_h - 120 <= mouse[1] <= screen_h - 120 + 66:
+                game_state = "game_play"
     screen.fill((0, 0, 0))
     if game_state == "start_menu":
         startpage.display_start_menu()
@@ -30,3 +33,4 @@ while running:
     if game_state == 'tutorial':
         print()
         # tutorial
+    pygame.display.update()
