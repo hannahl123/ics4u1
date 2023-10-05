@@ -5,9 +5,10 @@ import characters
 screen = pygame.display.set_mode((1080, 620))  # resizable not added
 screen_w, screen_h = pygame.display.get_surface().get_size()
 big_logo = pygame.image.load('images/UNDEAD UPRISING.png')
-
+bg = pygame.image.load('images/bg_earth.png')
 
 def display_start_menu():
+    screen.blit(bg, (0, 0))
     font = pygame.font.SysFont('consolas', 25)
     screen.blit(big_logo, ((screen_w - 800) / 2, screen_h - 550))
     instructions = font.render('Pick your character', True, (255, 255, 255))
@@ -37,39 +38,10 @@ def border():
 
 # All Characters
 def show_all_char():
-    redchar()
-    orangechar()
-    yellowchar()
-    bluechar()
-    purplechar()
-    pinkchar()
+    screen.blit(characters.John.char_img, (255, 325))
+    screen.blit(characters.Tony.char_img, (355, 325))
+    screen.blit(characters.Swift.char_img, (455, 325))
+    screen.blit(characters.Quinn.char_img, (555, 325))
+    screen.blit(characters.Theresa.char_img, (655, 325))
+    screen.blit(characters.Jekyll.char_img, (755, 325))
 
-
-def redchar():
-    red_char = pygame.image.load('images/john.png')
-    screen.blit(red_char, (255, 325))
-
-
-def orangechar():
-    orange_char = pygame.image.load('images/swift.png')
-    screen.blit(orange_char, (355, 325))
-
-
-def yellowchar():
-    yellow_char = pygame.image.load('images/john.png')
-    screen.blit(yellow_char, (455, 325))
-
-
-def bluechar():
-    blue_char = pygame.image.load('images/swift.png')
-    screen.blit(blue_char, (555, 325))
-
-
-def purplechar():
-    purple_char = pygame.image.load('images/john.png')
-    screen.blit(purple_char, (655, 325))
-
-
-def pinkchar():
-    pink_char = pygame.image.load('images/swift.png')
-    screen.blit(pink_char, (755, 325))
