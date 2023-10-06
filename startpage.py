@@ -5,14 +5,16 @@ import characters
 screen = pygame.display.set_mode((1080, 620))  # resizable not added
 screen_w, screen_h = pygame.display.get_surface().get_size()
 big_logo = pygame.image.load('images/UNDEAD UPRISING.png')
-bg = pygame.image.load('images/bg_earth.png')
+bg = pygame.image.load('images/backgrounds/bg_earth.png')
+
 
 def display_start_menu():
     screen.blit(bg, (0, 0))
     font = pygame.font.SysFont('consolas', 25)
     screen.blit(big_logo, ((screen_w - 800) / 2, screen_h - 550))
     instructions = font.render('Pick your character', True, (255, 255, 255))
-    screen.blit(instructions, (screen_w / 2 - instructions.get_width() / 2, screen_h / 2 - instructions.get_height() / 2 - 100))
+    screen.blit(instructions, (screen_w / 2 - instructions.get_width() /
+                2, screen_h / 2 - instructions.get_height() / 2 - 100))
     mouse = pygame.mouse.get_pos()
     border()
     show_all_char()
@@ -30,10 +32,11 @@ def start_button():
     screen.blit(start_text, (screen_w / 2 - 100 / 2 - 20, screen_h - 120))
 
 
-
 def border():
-    pygame.draw.rect(screen, (255, 255, 255), [screen_w / 2 - 700 / 2, screen_h / 2 - 50, 700, 200])
-    pygame.draw.rect(screen, (0, 0, 0), [(screen_w / 2 - 350 + 25), screen_h / 2 - 25, 650, 150])
+    pygame.draw.rect(screen, (255, 255, 255), [
+                     screen_w / 2 - 700 / 2, screen_h / 2 - 50, 700, 200])
+    pygame.draw.rect(screen, (0, 0, 0), [
+                     (screen_w / 2 - 350 + 25), screen_h / 2 - 25, 650, 150])
 
 
 # All Characters
@@ -44,4 +47,3 @@ def show_all_char():
     screen.blit(characters.Quinn.char_img, (555, 325))
     screen.blit(characters.Theresa.char_img, (655, 325))
     screen.blit(characters.Jekyll.char_img, (755, 325))
-
