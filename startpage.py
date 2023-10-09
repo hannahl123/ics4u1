@@ -25,8 +25,8 @@ def display_start_menu():
 
 # Displays the start button
 def start_button():
-    start_text = pygame.image.load('images/START.png')
-    screen.blit(start_text, (screen_w / 2 - 100 / 2 - 20, screen_h - 120))
+    start_text = pygame.image.load('images/start_new.png')
+    screen.blit(start_text, (screen_w / 2 - 80, screen_h - 120))
 
 # Displays the border
 def border():
