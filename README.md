@@ -1,5 +1,5 @@
 # ICS4U1 Final Project
-Created by Hannah, Daniyal, Iyad, Eliza, Thomas, Jojo
+Created by Hannah, Daniyal, Iyad, Thomas, Eliza, and Jojo
 
 ### -------- Commands --------
 Press [Q] or Exit to quit
