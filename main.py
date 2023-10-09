@@ -1,4 +1,4 @@
-# Import librarys and pages of code used in game
+# Import libraries and pages of code used in game
 import pygame
 import sys
 import startpage
@@ -20,6 +20,7 @@ big_logo = pygame.image.load('images/UNDEAD UPRISING.png')
 
 # Keeping track of the state of the game - start_menu, game_play, or tutorial
 game_state = "start_menu"
+
 
 # Variable to keep the game on, when changed to False then exit
 running = True

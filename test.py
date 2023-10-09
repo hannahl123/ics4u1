@@ -1,3 +1,20 @@
+'''
+Code for old start button - DO NOT REMOVE
+# font = pygame.font.SysFont('Retro', 25, bold=True)
+# pygame.draw.rect(screen, (255, 0, 255), [screen_w / 2 - 150 / 2 - 5, 515 - 5, 160, 50])
+# pygame.draw.rect(screen, (0, 255, 255), [screen_w / 2 - 150 / 2, 515, 150, 40])
+# start_text = font.render('START', True, (0, 0, 0))
+# screen.blit(start_text, (screen_w / 2 - 150 / 2 + start_text.get_width() / 2, 515 + start_text.get_height() / 2, 150, 40))
+
+Code for re-centreing - DO NOT REMOVE
+
+# Re-centres the character to the middle of the screen
+if event.key == pygame.K_c:
+    print("Character is re-centred")
+    charX = screen_w / 2 - 30
+    charY = screen_h / 2 - 30
+
+'''
 import os
 import pygame as pg
 from random import *
