@@ -38,9 +38,9 @@ def border():
 
 # Displays all characters on the start menu
 def show_all_char():
-    screen.blit(characters.John.char_img, (255, 325))
-    screen.blit(characters.Tony.char_img, (355, 325))
-    screen.blit(characters.Swift.char_img, (455, 325))
-    screen.blit(characters.Quinn.char_img, (555, 325))
+    screen.blit(characters.John.char_img, (260, 325))
+    screen.blit(characters.Tony.char_img, (350, 325))
+    screen.blit(characters.Swift.char_img, (450, 325))
+    screen.blit(characters.Quinn.char_img, (550, 325))
     screen.blit(characters.Theresa.char_img, (655, 325))
-    screen.blit(characters.Jekyll.char_img, (755, 325))
+    screen.blit(characters.Jekyll.char_img, (770, 325))
