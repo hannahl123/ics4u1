@@ -30,8 +30,10 @@ def start_button():
 
 # Displays the border
 def border():
-    pygame.draw.rect(screen, (255, 255, 255), [screen_w / 2 - 700 / 2, screen_h / 2 - 50, 700, 200])
-    pygame.draw.rect(screen, (0, 0, 0), [screen_w / 2 - 350 + 25, screen_h / 2 - 25, 650, 150])
+    border_image = pygame.image.load('images/border.png')
+    screen.blit(border_image, (screen_w / 2 - 350, screen_h / 2 - 50))
+    # pygame.draw.rect(screen, (255, 255, 255), [screen_w / 2 - 700 / 2, screen_h / 2 - 50, 700, 200])
+    # pygame.draw.rect(screen, (0, 0, 0), [screen_w / 2 - 350 + 25, screen_h / 2 - 25, 650, 150])
 
 
 # Displays all characters on the start menu

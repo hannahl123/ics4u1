@@ -27,16 +27,16 @@ def play(char):
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_LEFT or event.key == pygame.K_a:
                     print("Left arrow is pressed")
-                    charX_change = -0.5
+                    charX_change = -1
                 if event.key == pygame.K_RIGHT or event.key == pygame.K_d:
                     print("Right arrow is pressed")
-                    charX_change = 0.5
+                    charX_change = 1
                 if event.key == pygame.K_UP or event.key == pygame.K_w:
                     print("Up arrow is pressed")
-                    charY_change = -0.5
+                    charY_change = -1
                 if event.key == pygame.K_DOWN or event.key == pygame.K_s:
                     print("Down arrow is pressed")
-                    charY_change = 0.5
+                    charY_change = 1
             if event.type == pygame.KEYUP:
                 if event.key == pygame.K_LEFT or event.key == pygame.K_a or event.key == pygame.K_RIGHT or event.key == pygame.K_d:
                     print("Keystroke has been released")
