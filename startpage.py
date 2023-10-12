@@ -20,6 +20,7 @@ def display_start_menu():
     border() # displays the border to showcase characters
     show_all_char() # displays all 6 characters
     start_button() # displays the start button
+    tutorial()
     pygame.display.update() # updates the screen
 
 
@@ -27,6 +28,10 @@ def display_start_menu():
 def start_button():
     start_text = pygame.image.load('images/start_new.png')
     screen.blit(start_text, (screen_w / 2 - 80, screen_h - 120))
+
+def tutorial():
+        start_text = pygame.image.load('images/Tutorial.png')
+        screen.blit(start_text, (screen_w / 2 - 400, screen_h - 120))
 
 # Displays the border
 def border():
