@@ -65,7 +65,7 @@ while running:
                 if 460 <= mouse[0] <= 610 and 500 <= mouse[1] <= 550:
                     # if the start button was pressed, set the game state to game_play, which executes the next part of the game
                     game_state = "game_play"
-                 if 200 <= mouse[0] <= 400 and screen_h - 120 <= mouse[1] <= screen_h - 120 + 66:
+                if 200 <= mouse[0] <= 400 and screen_h - 120 <= mouse[1] <= screen_h - 120 + 66:
                     game_state = "tutorial" # For the tutorial button when pressed by the mouse
     # checks game state and executes the part of the game according to the variable
     if game_state == "start_menu":
