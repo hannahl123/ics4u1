@@ -30,7 +30,7 @@ def start_button():
     screen.blit(start_text, (screen_w / 2 - 80, screen_h - 120))
 
 def tutorial():
-        start_text = pygame.image.load('images/Tutorial.png')
+        start_text = pygame.image.load('images/Tutorial_button.png')
         screen.blit(start_text, (screen_w / 2 - 400, screen_h - 120))
 
 # Displays the border
