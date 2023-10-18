@@ -1,25 +1,30 @@
 import pygame
 import sys
+import ctypes
 import characters
 
 # Screen Settings - Setting size of screen and setting variables to access width and height of screen
-screen = pygame.display.set_mode((1080, 620))  # resizable not added
-screen_w, screen_h = pygame.display.get_surface().get_size()
+true_res = (ctypes.windll.user32.GetSystemMetrics(0), ctypes.windll.user32.GetSystemMetrics(1))
+screen = pygame.display.set_mode(true_res, pygame.FULLSCREEN)
+screen_w, screen_h = true_res[0], true_res[1]
 
 # Large logo of title and background of start menu
 big_logo = pygame.image.load('images/UNDEAD UPRISING.png')
 bg = pygame.image.load('images/backgrounds/bg_earth.png')
+bg = pygame.transform.scale(bg, (screen_w, screen_h))
+quit_b = pygame.image.load('images/QUIT_button.png')
 
 # Executes the start menu page
 def display_start_menu():
     screen.blit(bg, (0, 0)) # displays the background
     font = pygame.font.SysFont('consolas', 25) # sets the font family and font size
-    screen.blit(big_logo, ((screen_w - 800) / 2, screen_h - 550)) # displays the big title
+    screen.blit(big_logo, ((screen_w - 800) / 2, 125)) # displays the big title
     text = font.render('Pick your character', True, (255, 255, 255)) # sets the instructions text
-    screen.blit(text, (screen_w / 2 - text.get_width() / 2, screen_h / 2 - text.get_height() / 2 - 100)) # displays the instructions text
+    screen.blit(text, (screen_w / 2 - text.get_width() / 2, 250)) # displays the instructions text
     border() # displays the border to showcase characters
     show_all_char() # displays all 6 characters
     start_button() # displays the start button
+    screen.blit(quit_b, (50, screen_h - 100))
     pygame.display.update() # updates the screen
 
 
@@ -38,7 +43,7 @@ def border():
 
 # Displays all characters on the start menu
 def show_all_char():
-    screen.blit(characters.John.char_img, (260, 325))
+    screen.blit(characters.John.char_img, (screen_w * 2 / 8, 325))
     screen.blit(characters.Tony.char_img, (350, 325))
     screen.blit(characters.Swift.char_img, (450, 325))
     screen.blit(characters.Quinn.char_img, (550, 325))

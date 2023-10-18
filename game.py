@@ -1,11 +1,13 @@
 # Import libraries and character code
 import pygame
 import sys
+import ctypes
 import characters
 
 # Screen Settings - Setting size of screen and setting variables to access width and height of screen
-screen = pygame.display.set_mode((1080, 620))  # resizable not added
-screen_w, screen_h = pygame.display.get_surface().get_size()
+true_res = (ctypes.windll.user32.GetSystemMetrics(0), ctypes.windll.user32.GetSystemMetrics(1))
+screen = pygame.display.set_mode(true_res, pygame.FULLSCREEN)
+screen_w, screen_h = true_res[0], true_res[1]
 
 # Default character position - center of screen
 charX = screen_w / 2 - 30
@@ -16,9 +18,16 @@ charY_change = 0
 # Function to play the game
 def play(char):
     global charX, charY, charX_change, charY_change
-    screen.blit(characters.John.bg_img, (0, 0))
+    if charX <= 0:
+        charX = 0
+    if charX >= screen_w - 40:
+        charX = screen_w - 40
+    if charY <= 0:
+        charY = 0
+    if charY >= screen_h - 60:
+        charY = screen_h - 60
     if char == 'John':
-        # screen.blit(characters.John.bg_img, (0, 0))
+        screen.blit(characters.John.bg_img, (0, 0))
         # Monitors events in game
         for event in pygame.event.get():
             if event.type == pygame.QUIT or (event.type == pygame.KEYDOWN and event.key == pygame.K_q):
@@ -27,16 +36,16 @@ def play(char):
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_LEFT or event.key == pygame.K_a:
                     print("Left arrow is pressed")
-                    charX_change = -1
+                    charX_change = -3
                 if event.key == pygame.K_RIGHT or event.key == pygame.K_d:
                     print("Right arrow is pressed")
-                    charX_change = 1
+                    charX_change = 3
                 if event.key == pygame.K_UP or event.key == pygame.K_w:
                     print("Up arrow is pressed")
-                    charY_change = -1
+                    charY_change = -3
                 if event.key == pygame.K_DOWN or event.key == pygame.K_s:
                     print("Down arrow is pressed")
-                    charY_change = 1
+                    charY_change = 3
             if event.type == pygame.KEYUP:
                 if event.key == pygame.K_LEFT or event.key == pygame.K_a or event.key == pygame.K_RIGHT or event.key == pygame.K_d:
                     print("Keystroke has been released")

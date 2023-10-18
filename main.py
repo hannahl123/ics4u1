@@ -1,16 +1,18 @@
 # Import libraries and pages of code used in game
 import pygame
 import sys
+import ctypes
 import startpage
 import game
 import tutorial
 
+# Screen Settings - Setting size of screen and setting variables to access width and height of screen
+true_res = (ctypes.windll.user32.GetSystemMetrics(0), ctypes.windll.user32.GetSystemMetrics(1))
+screen = pygame.display.set_mode(true_res, pygame.FULLSCREEN)
+screen_w, screen_h = true_res[0], true_res[1]
+
 # Initialize the screen
 pygame.init()
-
-# Screen Settings - Setting size of screen and setting variables to access width and height of screen
-screen = pygame.display.set_mode((1080, 620))  # resizable not added
-screen_w, screen_h = pygame.display.get_surface().get_size()
 
 # Game Details - Loading and Setting the Name and Logos of the Game
 pygame.display.set_caption("Undead Uprising")
