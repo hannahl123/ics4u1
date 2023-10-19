@@ -12,7 +12,6 @@ screen_w, screen_h = true_res[0], true_res[1]
 big_logo = pygame.image.load('images/UNDEAD UPRISING.png')
 bg = pygame.image.load('images/backgrounds/bg_earth.png')
 bg = pygame.transform.scale(bg, (screen_w, screen_h))
-quit_b = pygame.image.load('images/QUIT_button.png')
 
 # Executes the start menu page
 def display_start_menu():
@@ -23,15 +22,21 @@ def display_start_menu():
     screen.blit(text, (screen_w / 2 - text.get_width() / 2, 250)) # displays the instructions text
     border() # displays the border to showcase characters
     show_all_char() # displays all 6 characters
-    start_button() # displays the start button
-    screen.blit(quit_b, (50, screen_h - 100))
+    buttons() # displays the start button
     pygame.display.update() # updates the screen
 
 
 # Displays the start button
-def start_button():
-    start_text = pygame.image.load('images/start_new.png')
-    screen.blit(start_text, (screen_w / 2 - 80, screen_h - 120))
+def buttons():
+    tutorial_b = pygame.image.load('images/tutorial_button_test.png')
+    tutorial_b = pygame.transform.scale(tutorial_b, (75, 75))
+    start_b = pygame.image.load('images/START_button.png')
+    start_b = pygame.transform.scale(start_b, (150, 60))
+    quit_b = pygame.image.load('images/QUIT_button.png')
+    quit_b = pygame.transform.scale(quit_b, (150, 60))
+    screen.blit(start_b, (screen_w / 2 - 200, screen_h - 140))
+    screen.blit(quit_b, (screen_w / 2 + 50, screen_h - 140))
+    screen.blit(tutorial_b, (30, screen_h - 105))
 
 # Displays the border
 def border():
@@ -43,9 +48,9 @@ def border():
 
 # Displays all characters on the start menu
 def show_all_char():
-    screen.blit(characters.John.char_img, (screen_w * 2 / 8, 325))
-    screen.blit(characters.Tony.char_img, (350, 325))
-    screen.blit(characters.Swift.char_img, (450, 325))
-    screen.blit(characters.Quinn.char_img, (550, 325))
-    screen.blit(characters.Theresa.char_img, (655, 325))
-    screen.blit(characters.Jekyll.char_img, (770, 325))
+    screen.blit(characters.John.char_img, (screen_w * 2 / 7, screen_h / 2 + 20))
+    screen.blit(characters.Tony.char_img, (screen_w * 2.5 / 7, screen_h / 2 + 20))
+    screen.blit(characters.Swift.char_img, (screen_w * 3 / 7, screen_h / 2 + 20))
+    screen.blit(characters.Quinn.char_img, (screen_w * 3.5 / 7 + 10, screen_h / 2 + 20))
+    screen.blit(characters.Theresa.char_img, (screen_w * 4 / 7 + 20, screen_h / 2 + 20))
+    screen.blit(characters.Jekyll.char_img, (screen_w * 4.5 / 7 + 30, screen_h / 2 + 20))

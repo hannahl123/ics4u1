@@ -18,10 +18,11 @@ charY_change = 0
 # Function to play the game
 def play(char):
     global charX, charY, charX_change, charY_change
+    # border code
     if charX <= 0:
         charX = 0
-    if charX >= screen_w - 40:
-        charX = screen_w - 40
+    if charX >= screen_w - 50:
+        charX = screen_w - 50
     if charY <= 0:
         charY = 0
     if charY >= screen_h - 60:
