@@ -35,7 +35,6 @@ while running:
         if event.type == pygame.QUIT or (event.type == pygame.KEYDOWN and event.key == pygame.K_q):
             # sets the variable to False, which breaks the while loop
             running = False
-        # checks if the game state is start menu and mouse is clicked
         # if the mouse is clicked in the start menu, check where the cursor is
         if game_state == 'start_menu' and event.type == pygame.MOUSEBUTTONDOWN:
             # checks which character the mouse cursor is on
@@ -43,28 +42,28 @@ while running:
                 # if John is clicked, state in the console and set the character to John
                 character = "John"
                 print('John is picked')
-            if screen_w * 2.5 / 7 <= mouse[0] <= screen_w * 2.5 / 7 + 50 and screen_h / 2 + 20 <= mouse[1] <= screen_h / 2 + 80:
+            elif screen_w * 2.5 / 7 <= mouse[0] <= screen_w * 2.5 / 7 + 50 and screen_h / 2 + 20 <= mouse[1] <= screen_h / 2 + 80:
                 # if Tony is clicked, state in the console and set the character to Tony
                 character = "Tony"
                 print('Tony is picked')
-            if screen_w * 3 / 7 <= mouse[0] <= screen_w * 3 / 7 + 50 and screen_h / 2 + 20 <= mouse[1] <= screen_h / 2 + 80:
+            elif screen_w * 3 / 7 <= mouse[0] <= screen_w * 3 / 7 + 50 and screen_h / 2 + 20 <= mouse[1] <= screen_h / 2 + 80:
                 # if Swift is clicked, state in the console and set the character to Swift
                 character = "Swift"
                 print('Swift is picked')
-            if screen_w * 3.5 / 7 <= mouse[0] <= screen_w * 3.5 / 7 + 50 and screen_h / 2 + 20 <= mouse[1] <= screen_h / 2 + 80:
+            elif screen_w * 3.5 / 7 <= mouse[0] <= screen_w * 3.5 / 7 + 50 and screen_h / 2 + 20 <= mouse[1] <= screen_h / 2 + 80:
                 # if Quinn is clicked, state in the console and set the character to Quinn
                 character = "Quinn"
                 print('Quinn is picked')
-            if screen_w * 4 / 7 <= mouse[0] <= screen_w * 4 / 7 + 50 and screen_h / 2 + 20 <= mouse[1] <= screen_h / 2 + 80:
+            elif screen_w * 4 / 7 <= mouse[0] <= screen_w * 4 / 7 + 50 and screen_h / 2 + 20 <= mouse[1] <= screen_h / 2 + 80:
                 # if Theresa is clicked, state in the console and set the character to Theresa
                 character = "Theresa"
                 print('Theresa is picked')
-            if screen_w * 4.5 / 7 <= mouse[0] <= screen_w * 4.5 / 7 + 50 and screen_h / 2 + 20 <= mouse[1] <= screen_h / 2 + 80:
+            elif screen_w * 4.5 / 7 <= mouse[0] <= screen_w * 4.5 / 7 + 50 and screen_h / 2 + 20 <= mouse[1] <= screen_h / 2 + 80:
                 # if Jekyll is clicked, state in the console and set the character to Jekyll
                 character = "Jekyll"
                 print('Jekyll is picked')
             # checks if the start button is clicked
-            if screen_w / 2 - 200 <= mouse[0] <= screen_w / 2 - 50 and screen_h - 140 <= mouse[1] <= screen_h - 80:
+            elif screen_w / 2 - 200 <= mouse[0] <= screen_w / 2 - 50 and screen_h - 140 <= mouse[1] <= screen_h - 80:
                 # if the start button was pressed, set the game state to game_play, which executes the next part of the game
                 game_state = "game_play"
             # checks if the tutorial button is clicked
@@ -74,10 +73,10 @@ while running:
     if game_state == "start_menu":
         # executes start menu screen
         startpage.display_start_menu()
-    if game_state == 'game_play':
+    elif game_state == 'game_play':
         # executes game play screen
         game.play(character)
-    if game_state == 'tutorial':
+    elif game_state == 'tutorial':
         # executes tutorial screen
         tutorial.intro()
-    pygame.display.update()
+    pygame.display.flip()
