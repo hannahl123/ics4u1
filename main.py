@@ -5,6 +5,7 @@ import ctypes
 import startpage
 import game
 import tutorial
+import characters
 
 # Initialize the screen
 pygame.init()
@@ -41,34 +42,70 @@ while running:
             if screen_w * 2 / 7 <= mouse[0] <= screen_w * 2 / 7 + 50 and screen_h / 2 + 20 <= mouse[1] <= screen_h / 2 + 80:
                 # if John is clicked, state in the console and set the character to John
                 character = "John"
+                characters.John.clicked = True
+                characters.Tony.clicked = False
+                characters.Quinn.clicked = False
+                characters.Swift.clicked = False
+                characters.Jekyll.clicked = False
+                characters.Theresa.clicked = False
                 print('John is picked')
             elif screen_w * 2.5 / 7 <= mouse[0] <= screen_w * 2.5 / 7 + 50 and screen_h / 2 + 20 <= mouse[1] <= screen_h / 2 + 80:
                 # if Tony is clicked, state in the console and set the character to Tony
                 character = "Tony"
+                characters.John.clicked = False
+                characters.Tony.clicked = True
+                characters.Quinn.clicked = False
+                characters.Swift.clicked = False
+                characters.Jekyll.clicked = False
+                characters.Theresa.clicked = False
                 print('Tony is picked')
             elif screen_w * 3 / 7 <= mouse[0] <= screen_w * 3 / 7 + 50 and screen_h / 2 + 20 <= mouse[1] <= screen_h / 2 + 80:
                 # if Swift is clicked, state in the console and set the character to Swift
                 character = "Swift"
+                characters.John.clicked = False
+                characters.Tony.clicked = False
+                characters.Quinn.clicked = False
+                characters.Swift.clicked = True
+                characters.Jekyll.clicked = False
+                characters.Theresa.clicked = False
                 print('Swift is picked')
             elif screen_w * 3.5 / 7 <= mouse[0] <= screen_w * 3.5 / 7 + 50 and screen_h / 2 + 20 <= mouse[1] <= screen_h / 2 + 80:
                 # if Quinn is clicked, state in the console and set the character to Quinn
                 character = "Quinn"
+                characters.John.clicked = False
+                characters.Tony.clicked = False
+                characters.Quinn.clicked = True
+                characters.Swift.clicked = False
+                characters.Jekyll.clicked = False
+                characters.Theresa.clicked = False
                 print('Quinn is picked')
             elif screen_w * 4 / 7 <= mouse[0] <= screen_w * 4 / 7 + 50 and screen_h / 2 + 20 <= mouse[1] <= screen_h / 2 + 80:
                 # if Theresa is clicked, state in the console and set the character to Theresa
                 character = "Theresa"
+                characters.John.clicked = False
+                characters.Tony.clicked = False
+                characters.Quinn.clicked = False
+                characters.Swift.clicked = False
+                characters.Jekyll.clicked = False
+                characters.Theresa.clicked = True
                 print('Theresa is picked')
             elif screen_w * 4.5 / 7 <= mouse[0] <= screen_w * 4.5 / 7 + 50 and screen_h / 2 + 20 <= mouse[1] <= screen_h / 2 + 80:
                 # if Jekyll is clicked, state in the console and set the character to Jekyll
                 character = "Jekyll"
+                characters.John.clicked = False
+                characters.Tony.clicked = False
+                characters.Quinn.clicked = False
+                characters.Swift.clicked = False
+                characters.Jekyll.clicked = True
+                characters.Theresa.clicked = False
                 print('Jekyll is picked')
             # checks if the start button is clicked
             elif screen_w / 2 - 200 <= mouse[0] <= screen_w / 2 - 50 and screen_h - 140 <= mouse[1] <= screen_h - 80:
                 # if the start button was pressed, set the game state to game_play, which executes the next part of the game
                 game_state = "game_play"
             # checks if the tutorial button is clicked
-            # if 200 <= mouse[0] <= 400 and screen_h - 120 <= mouse[1] <= screen_h - 120 + 66:
-                # game_state = "tutorial" # For the tutorial button when pressed by the mouse            
+            if 30 <= mouse[0] <= 105 and screen_h - 105 <= mouse[1] <= screen_h - 30:
+                game_state = "tutorial"
     # checks game state and executes the part of the game according to the variable
     if game_state == "start_menu":
         # executes start menu screen

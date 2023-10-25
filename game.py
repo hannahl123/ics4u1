@@ -59,7 +59,7 @@ def play(char):
         charX += charX_change
         charY += charY_change
         screen.blit(characters.John.char_img, (charX, charY))
-    if char == 'Tony':
+    elif char == 'Tony':
         screen.blit(characters.Tony.bg_img, (0, 0))
         # Monitors events in game
         for event in pygame.event.get():
@@ -90,7 +90,135 @@ def play(char):
                     print("Keystroke has been released")
         charX += charX_change
         charY += charY_change
-        screen.blit(characters.Tony.char_img, (screen_w / 2 - characters.Tony.char_img.get_width() / 2, 450))
+        screen.blit(characters.Tony.char_img, (charX, charY))
+    elif char == 'Swift':
+        screen.blit(characters.Swift.bg_img, (0, 0))
+        # Monitors events in game
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT or (event.type == pygame.KEYDOWN and event.key == pygame.K_q):
+                # sets the variable to False, which breaks the while loop
+                sys.exit()
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_LEFT or event.key == pygame.K_a:
+                    print("Left arrow is pressed")
+                    charX_change = -3
+                if event.key == pygame.K_RIGHT or event.key == pygame.K_d:
+                    print("Right arrow is pressed")
+                    charX_change = 3
+                if event.key == pygame.K_UP or event.key == pygame.K_w:
+                    print("Up arrow is pressed")
+                    charY_change = -3
+                if event.key == pygame.K_DOWN or event.key == pygame.K_s:
+                    print("Down arrow is pressed")
+                    charY_change = 3
+            if event.type == pygame.KEYUP:
+                if event.key == pygame.K_LEFT or event.key == pygame.K_a or event.key == pygame.K_RIGHT or event.key == pygame.K_d:
+                    print("Keystroke has been released")
+                    charX_change = 0
+                if event.key == pygame.K_UP or event.key == pygame.K_w or event.key == pygame.K_DOWN or event.key == pygame.K_s:
+                    print("Keystroke has been released")
+                    charY_change = 0
+                if event.key == pygame.K_c:
+                    print("Keystroke has been released")
+        charX += charX_change
+        charY += charY_change
+        screen.blit(characters.Swift.char_img, (charX, charY))
+    elif char == 'Quinn':
+        screen.blit(characters.Quinn.bg_img, (0, 0))
+        # Monitors events in game
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT or (event.type == pygame.KEYDOWN and event.key == pygame.K_q):
+                # sets the variable to False, which breaks the while loop
+                sys.exit()
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_LEFT or event.key == pygame.K_a:
+                    print("Left arrow is pressed")
+                    charX_change = -3
+                if event.key == pygame.K_RIGHT or event.key == pygame.K_d:
+                    print("Right arrow is pressed")
+                    charX_change = 3
+                if event.key == pygame.K_UP or event.key == pygame.K_w:
+                    print("Up arrow is pressed")
+                    charY_change = -3
+                if event.key == pygame.K_DOWN or event.key == pygame.K_s:
+                    print("Down arrow is pressed")
+                    charY_change = 3
+            if event.type == pygame.KEYUP:
+                if event.key == pygame.K_LEFT or event.key == pygame.K_a or event.key == pygame.K_RIGHT or event.key == pygame.K_d:
+                    print("Keystroke has been released")
+                    charX_change = 0
+                if event.key == pygame.K_UP or event.key == pygame.K_w or event.key == pygame.K_DOWN or event.key == pygame.K_s:
+                    print("Keystroke has been released")
+                    charY_change = 0
+                if event.key == pygame.K_c:
+                    print("Keystroke has been released")
+        charX += charX_change
+        charY += charY_change
+        screen.blit(characters.Quinn.char_img, (charX, charY))
+    elif char == 'Theresa':
+        screen.blit(characters.Theresa.bg_img, (0, 0))
+        # Monitors events in game
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT or (event.type == pygame.KEYDOWN and event.key == pygame.K_q):
+                # sets the variable to False, which breaks the while loop
+                sys.exit()
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_LEFT or event.key == pygame.K_a:
+                    print("Left arrow is pressed")
+                    charX_change = -3
+                if event.key == pygame.K_RIGHT or event.key == pygame.K_d:
+                    print("Right arrow is pressed")
+                    charX_change = 3
+                if event.key == pygame.K_UP or event.key == pygame.K_w:
+                    print("Up arrow is pressed")
+                    charY_change = -3
+                if event.key == pygame.K_DOWN or event.key == pygame.K_s:
+                    print("Down arrow is pressed")
+                    charY_change = 3
+            if event.type == pygame.KEYUP:
+                if event.key == pygame.K_LEFT or event.key == pygame.K_a or event.key == pygame.K_RIGHT or event.key == pygame.K_d:
+                    print("Keystroke has been released")
+                    charX_change = 0
+                if event.key == pygame.K_UP or event.key == pygame.K_w or event.key == pygame.K_DOWN or event.key == pygame.K_s:
+                    print("Keystroke has been released")
+                    charY_change = 0
+                if event.key == pygame.K_c:
+                    print("Keystroke has been released")
+        charX += charX_change
+        charY += charY_change
+        screen.blit(characters.Theresa.char_img, (charX, charY))
+    elif char == 'Jekyll':
+        screen.blit(characters.Jekyll.bg_img, (0, 0))
+        # Monitors events in game
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT or (event.type == pygame.KEYDOWN and event.key == pygame.K_q):
+                # sets the variable to False, which breaks the while loop
+                sys.exit()
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_LEFT or event.key == pygame.K_a:
+                    print("Left arrow is pressed")
+                    charX_change = -3
+                if event.key == pygame.K_RIGHT or event.key == pygame.K_d:
+                    print("Right arrow is pressed")
+                    charX_change = 3
+                if event.key == pygame.K_UP or event.key == pygame.K_w:
+                    print("Up arrow is pressed")
+                    charY_change = -3
+                if event.key == pygame.K_DOWN or event.key == pygame.K_s:
+                    print("Down arrow is pressed")
+                    charY_change = 3
+            if event.type == pygame.KEYUP:
+                if event.key == pygame.K_LEFT or event.key == pygame.K_a or event.key == pygame.K_RIGHT or event.key == pygame.K_d:
+                    print("Keystroke has been released")
+                    charX_change = 0
+                if event.key == pygame.K_UP or event.key == pygame.K_w or event.key == pygame.K_DOWN or event.key == pygame.K_s:
+                    print("Keystroke has been released")
+                    charY_change = 0
+                if event.key == pygame.K_c:
+                    print("Keystroke has been released")
+        charX += charX_change
+        charY += charY_change
+        screen.blit(characters.Jekyll.char_img, (charX, charY))
     pygame.display.update()
 
 

@@ -16,6 +16,7 @@ bg = pygame.transform.scale(bg, (screen_w, screen_h))
 # Executes the start menu page
 def display_start_menu():
     screen.blit(bg, (0, 0)) # displays the background
+    mouse = pygame.mouse.get_pos()
     font = pygame.font.SysFont('consolas', 25) # sets the font family and font size
     screen.blit(big_logo, ((screen_w - 800) / 2, 125)) # displays the big title
     text = font.render('Pick your character', True, (255, 255, 255)) # sets the instructions text
@@ -48,9 +49,9 @@ def border():
 
 # Displays all characters on the start menu
 def show_all_char():
-    screen.blit(characters.John.char_img, (screen_w * 2 / 7, screen_h / 2 + 20))
-    screen.blit(characters.Tony.char_img, (screen_w * 2.5 / 7, screen_h / 2 + 20))
-    screen.blit(characters.Swift.char_img, (screen_w * 3 / 7, screen_h / 2 + 20))
-    screen.blit(characters.Quinn.char_img, (screen_w * 3.5 / 7 + 10, screen_h / 2 + 20))
-    screen.blit(characters.Theresa.char_img, (screen_w * 4 / 7 + 20, screen_h / 2 + 20))
-    screen.blit(characters.Jekyll.char_img, (screen_w * 4.5 / 7 + 30, screen_h / 2 + 20))
+    characters.John.show()
+    characters.Tony.show()
+    characters.Swift.show()
+    characters.Quinn.show()
+    characters.Theresa.show()
+    characters.Jekyll.show()
