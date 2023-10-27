@@ -29,7 +29,7 @@ def display_start_menu():
 
 # Displays the start button
 def buttons():
-    tutorial_b = pygame.image.load('images/tutorial_button_test.png')
+    tutorial_b = pygame.image.load('images/Tutorial_button.png')
     tutorial_b = pygame.transform.scale(tutorial_b, (75, 75))
     start_b = pygame.image.load('images/START_button.png')
     start_b = pygame.transform.scale(start_b, (150, 60))
